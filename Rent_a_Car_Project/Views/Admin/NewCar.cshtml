@@ -1,0 +1,29 @@
+﻿@model Rent_a_Car_Project.Models.Siniflar.Cars
+@{
+    ViewBag.Title = "NewCar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Araba Ekleme</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.carName)
+    @Html.TextBoxFor(x => x.carName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x=>x.model)
+    @Html.TextBoxFor(x=>x.model, new {@class="form-control"})
+<br />
+    @Html.LabelFor(x=>x.carInfo)
+    @Html.TextAreaFor(x=>x.carInfo, new { @class="form-control"})
+<br />
+    @Html.LabelFor(x=>x.price)
+    @Html.TextBoxFor(x=>x.price, new { @class = "form-control" })
+<br />
+    @Html.LabelFor(x=>x.carImage)
+    @Html.TextBoxFor(x=>x.carImage, new {@class = "form-control" })
+<br />
+    <button class="btn btn-primary">Araba Ekle</button>
+
+
+</form>
+

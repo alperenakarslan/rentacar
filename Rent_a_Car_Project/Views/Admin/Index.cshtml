@@ -1,0 +1,27 @@
+﻿@using Rent_a_Car_Project.Models.Siniflar
+@model List<Cars>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Araba İsmi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.carName</td>
+            <td><a href="/Admin/CarDelete/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/GetCar/@x.ID" class="btn btn-warning" >Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/NewCar/" class="btn btn-primary">Yeni Araba</a>

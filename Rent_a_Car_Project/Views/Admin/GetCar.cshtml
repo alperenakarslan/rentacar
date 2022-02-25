@@ -1,0 +1,31 @@
+﻿@model Rent_a_Car_Project.Models.Siniflar.Cars
+@{
+    ViewBag.Title = "GetCar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Araba Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("UpdateCar", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly"  })
+    <br />
+    @Html.LabelFor(x => x.carName)
+    @Html.TextBoxFor(x => x.carName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.model)
+    @Html.TextBoxFor(x => x.model, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.carInfo)
+    @Html.TextAreaFor(x => x.carInfo,7,1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.price)
+    @Html.TextBoxFor(x => x.price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.carImage)
+    @Html.TextBoxFor(x => x.carImage, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Arabayı Güncelle</button>
+}
+
